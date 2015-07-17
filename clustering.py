@@ -13,7 +13,7 @@ import matplotlib as mpl
 def get_distances(matrix, v1, k):
     distlist = []
     col = matrix.shape[1]
-    for i in range(col):)
+    for i in range(col):
         v2 = matrix[:,i]
         distlist.append((cosine(v1, v2), i))
     distlist.sort()
