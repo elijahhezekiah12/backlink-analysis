@@ -1,4 +1,4 @@
-The program allows to analyze backlinks and find the topics of pages that contain them.
+The program is written in Python 3.4 and allows to analyze backlinks and find the topics of pages that contain them.
 Currently the classification is available only for pages in English and Russian, but that can be easily changed.
 There are 2 parts:
 1. Building the training set (articles from Wikipedia), where the categories should be chosen manually (I know, it takes long, and maybe I'll work on that later). I use Latent Semantic Indexing (LSI) for reducing the size of the term-document matrix and removing "noise".
