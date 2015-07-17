@@ -3,7 +3,7 @@ Currently the classification is available only for pages in English and Russian,
 There are 2 parts:
 1. Building the training set (articles from Wikipedia), where the categories should be chosen manually (I know, it takes long, and maybe I'll work on that later). I use Latent Semantic Indexing (LSI) for reducing the size of the term-document matrix and removing "noise".
 2. Checking a given website and analyzing its backlinks. I use k Nearest Neighbors algorithm here.
-The result is a list of categories and numbers which show how many external pages belong to each category. 
+The result is a list of categories and numbers, which shows how many external pages belong to each category. 
 The average precision (the amount of topics guessed correctly) is ~58%.
 
 You need the following libraries:
