@@ -33,13 +33,14 @@ class wiki:
         en_cats = re.sub('[,.]', ' ', en_cats)
         en_cats = en_cats.split()
         if len(ru_cats) != len(en_cats):
-            print('Error: different number of categories')
+            print('Error: number of categories')
             return
         
         self.con.execute('delete from categories')
         for i in range(len(en_cats)):
             name = re.sub('_', ' ', en_cats[i])
             self.con.execute('insert into categories(ru, en, name) values (?,?,?)', (ru_cats[i], en_cats[i], name))
+        self.con.commit()
 
     def get_articles(self, lang, update=False):
 
@@ -49,6 +50,7 @@ class wiki:
                 print('Deleting category', r[0], '...')
         else:
             self.con.execute('delete from ' + lang + '_wikipages')
+        self.con.commit()
         wikipedia.set_lang(lang)
         wikisite = 'http://' + lang + '.wikipedia.org/w/api.php'
 

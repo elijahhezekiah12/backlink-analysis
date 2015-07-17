@@ -35,6 +35,7 @@ def create_webpages_database():
 def build_ru_matrix():
     con = sqlite3.connect('wiki.db')
     con.execute('delete from ru_words')
+    con.commit()
     stemmer = SnowballStemmer('russian')
 
     terms = dict()
@@ -113,7 +114,7 @@ def build_ru_matrix():
 def build_en_matrix():
     con = sqlite3.connect('wiki.db')
     con.execute('delete from en_words')
-    
+    con.commit()
     stemmer = SnowballStemmer('english')
 
     #en_parts = ['FW', 'NN', 'NNS', 'NNP', 'NNPS']
